@@ -7,6 +7,7 @@ def rand_2000_to_file():
 	count = 0
 	numeros = range(1, 2001)
 	salida = list()
+	f = open('workfile.txt', 'w')
 	while count < 2000:
 		posicion = random.randrange(0,2000-count)
 		numero = numeros[posicion]
@@ -14,6 +15,7 @@ def rand_2000_to_file():
 		salida.append(numero)
 		count=count+1
 		print "%d -> %d" % (count, numero)		
+		f.write("%d -> %d\n" % (count, numero))
 
 if __name__ == "__main__":
 	rand_2000_to_file()
