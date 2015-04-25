@@ -1,20 +1,19 @@
 import random
+import pdb
 
 
 def rand_2000_to_file():
 	print "running"
 	count = 0
-	numeros = []
+	numeros = range(1, 2001)
+	salida = list()
 	while count < 2000:
-		alt = random.randrange(1,2000)
-		found = False
-		for numero in numeros:
-			if numero == alt:
-				found = True
-		if not found:
-			print "%d -> %d" % (count, alt)
-			numeros.append(alt)
-			count=count+1
+		posicion = random.randrange(0,2000-count)
+		numero = numeros[posicion]
+		del numeros[posicion]
+		salida.append(numero)
+		count=count+1
+		print "%d -> %d" % (count, numero)		
 
 if __name__ == "__main__":
 	rand_2000_to_file()
